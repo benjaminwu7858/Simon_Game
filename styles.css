@@ -9,7 +9,14 @@ body {
   margin:  5%;
   color: #FEF2BF;
 }
-
+.icon{
+  font-size: 5rem;
+  background-color: inherit;
+  border: none;
+}
+.icon:hover{
+  color: #fff;
+}
 .container {
   display: block;
   width: 50%;

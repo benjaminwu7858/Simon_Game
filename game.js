@@ -24,7 +24,6 @@ $(".btn").click(function() {
   animatePress(userChosenColour);
   checkAnswer(userClickedPattern.length - 1);
 })
-//index 紀錄下一個被確認的顏色
 function checkAnswer(currentLevel) {
   if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
     if(currentLevel === gamePattern.length - 1){
@@ -37,7 +36,7 @@ function checkAnswer(currentLevel) {
     setTimeout(function(){
       $("body").removeClass("game-over");
     },200);
-    $("h1").html("Game Over, Press Any Key to Restart");
+    $("#level-title").html("Game Over, Press <button type='button' class='icon'>🎮</button> to Restart");
     startOver();
   }
 }
@@ -62,7 +61,7 @@ function animatePress(currentColour) {
   }, 100);
 }
 
-$(document).keydown(function() {
+$("#level-title").click(function() {
   if (!started) {
     $("#level-title").html("Level" + level);
     nextSequence();
